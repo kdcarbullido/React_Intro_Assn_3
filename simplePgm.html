@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Second React App</title>
+</head>
+
+<body>
+<div id="myApp"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+<script type="text/babel">
+
+    class KCProgram extends React.Component {
+        render() {
+            return (
+                <div>
+                    <h1>Hello America!</h1>
+                    <p>These are trying political times.  There are many forces at play.</p>
+                    <ul>
+                        <li>Technology advances like the Internet and social media</li>
+                        <li>Populism on the rise</li>
+                        <li>Continued tension internationally</li>
+                        <li>Terrorism</li>
+                        <li>Demographic trends</li>
+                    </ul>
+                    <p>Author: J Quincy Adamson</p>
+                </div>
+            );
+        }
+    }
+
+    ReactDOM.render(
+        <KCProgram />, document.getElementById('myApp')
+    );
+
+</script>
+</body>
+
+
+</html>
