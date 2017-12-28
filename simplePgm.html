@@ -1,41 +1,66 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>My Second React App</title>
-</head>
+    <head>
+        <title>My Third React App</title>
+    </head>
 
-<body>
-<div id="myApp"></div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
-<script type="text/babel">
+    <body>
+        <div id="myApp"></div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+        <script type="text/babel">
 
-    class KCProgram extends React.Component {
-        render() {
-            return (
-                <div>
-                    <h1>Hello America!</h1>
-                    <p>These are trying political times.  There are many forces at play.</p>
-                    <ul>
-                        <li>Technology advances like the Internet and social media</li>
-                        <li>Populism on the rise</li>
-                        <li>Continued tension internationally</li>
-                        <li>Terrorism</li>
-                        <li>Demographic trends</li>
-                    </ul>
-                    <p>Author: J Quincy Adamson</p>
-                </div>
+            class KCProgram extends React.Component {
+
+                constructor(props){
+                    super(props);
+                    this.state = {
+                        stage: "Pre-Season"
+                    }
+                }
+
+                render() {
+                    return (
+                        <div>
+                            <h1>Hello America!</h1>
+                            <p>These are trying political times.  There are many forces at play.</p>
+                            <ul>
+                                <li>Technology advances like the Internet and social media</li>
+                                <li>Populism on the rise</li>
+                                <li>Continued tension internationally</li>
+                                <li>Terrorism</li>
+                                <li>Demographic trends</li>
+                            </ul>
+                            <p>Author: J Quincy Adamson</p>
+                            <p>The two major politcal parties are:</p>
+                            <ul>
+                                <li>{this.props.party1}</li>
+                                <li>{this.props.party2}</li>
+                            </ul>
+                            <p>Most people now get their information from {this.props.channel1} and {this.props.channel2} channels.</p>
+                            <p>We are in the {this.state.stage} phase of the democratic process</p>
+                        </div>
+                    );
+                }
+            }
+
+            const info = {
+                party1: "Republican",
+                party2: "Democratic",
+                channel1: "Broadcast News",
+                channel2: "Internet"
+            }
+
+            ReactDOM.render(
+                <KCProgram
+                    party1={info.party1}
+                    party2={info.party2}
+                    channel1={info.channel1}
+                    channel2={info.channel2}
+                />, document.getElementById('myApp')
             );
-        }
-    }
 
-    ReactDOM.render(
-        <KCProgram />, document.getElementById('myApp')
-    );
-
-</script>
-</body>
-
-
+        </script>
+    </body>
 </html>
